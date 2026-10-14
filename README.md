@@ -27,6 +27,8 @@ Le test a d'abord révélé une faille : le garde-fou laissait passer presque to
 
 ## Le flux
 
+![Le workflow n8n et ses six branches](captures/workflow.png)
+
 ```
 Formulaire Google ──► Apps Script ──► Cloudflare Tunnel ──► Webhook n8n
                                                                  │
@@ -62,6 +64,22 @@ Formulaire Google ──► Apps Script ──► Cloudflare Tunnel ──► We
 - `temperature: 0.1` : la même demande doit donner la même catégorie.
 - `responseMimeType: application/json` : c'est l'API qui garantit un JSON valide, pas seulement le prompt.
 - Reprise automatique : 4 tentatives espacées de 5 secondes, pour absorber les saturations ponctuelles de l'API (erreurs 503).
+
+---
+
+## En images
+
+| Masquage avant l'appel à l'IA | Analyse produite par Gemini |
+|---|---|
+| ![Sortie du nœud de masquage](captures/masquage.png) | ![Sortie du nœud Analyse Gemini](captures/analyse-gemini.png) |
+
+| Transaction enrichie dans HubSpot | Ticket enrichi dans HubSpot |
+|---|---|
+| ![Transaction HubSpot](captures/deal-hubspot.png) | ![Ticket HubSpot](captures/ticket-hubspot.png) |
+
+| Traités seuls / escaladés vers un humain | Réponse automatique reçue |
+|---|---|
+| ![Tickets par statut](captures/ticket-escalade.png) | ![Email automatique](captures/email-auto.png) |
 
 ---
 
