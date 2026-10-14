@@ -1,0 +1,8 @@
+# Secrets et fichiers locaux : ne jamais publier
+n8n.env
+*.env
+!*.env.example
+tunnel.log
+journal_envoi.csv
+resultats_ia.csv
+~$*
